@@ -70,7 +70,7 @@ namespace SD_Ambience.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult StartSession(SessionModel model)
         {
-            var httpWebRequest = (HttpWebRequest) WebRequest.Create("http://145.24.222.180:80/api/Session");
+            var httpWebRequest = (HttpWebRequest) WebRequest.Create("http:////////////api/Session");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             SessionStartModelApiPost sessionModel = new SessionStartModelApiPost();
@@ -115,7 +115,7 @@ namespace SD_Ambience.Controllers
 
             if (model.Id != Guid.Empty && model.Id != null)
             {
-                HttpWebRequest httpWebRequest = (HttpWebRequest) WebRequest.Create("http://145.24.222.180:80/api/Session");
+                HttpWebRequest httpWebRequest = (HttpWebRequest) WebRequest.Create("http://////////api/Session");
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
                 sessionModel = new SessionBuilder().MakeSessionStopModelReadyForJsonConversion(model);
