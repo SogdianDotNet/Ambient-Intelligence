@@ -29,8 +29,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.Security", "SD.Security\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.Data.Entities", "SD.Data.Entities\SD.Data.Entities.csproj", "{D2D75EA6-6FA7-4114-97FD-51C6F7EFDFCC}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{F0F8549D-272C-4798-8965-3F3F8CF99403}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,10 +68,6 @@ Global
 		{D2D75EA6-6FA7-4114-97FD-51C6F7EFDFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2D75EA6-6FA7-4114-97FD-51C6F7EFDFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2D75EA6-6FA7-4114-97FD-51C6F7EFDFCC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0F8549D-272C-4798-8965-3F3F8CF99403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0F8549D-272C-4798-8965-3F3F8CF99403}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0F8549D-272C-4798-8965-3F3F8CF99403}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0F8549D-272C-4798-8965-3F3F8CF99403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,45 +80,5 @@ Global
 		{BE0D1E79-EAC0-487C-BCFA-13D3F84153A6} = {9E9B258E-DA5E-4F96-A7CF-6DAB24CE5438}
 		{7A0C9DA0-2E53-4941-BCE4-B56BC9073012} = {B92CE476-7C71-4193-90E2-99801C45EF5C}
 		{D2D75EA6-6FA7-4114-97FD-51C6F7EFDFCC} = {DC9B54F6-B121-470D-9E12-21C7EF6E9BB9}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 10
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://aghaffer.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SD_Ambience\\SD_WEB.csproj
-		SccProjectName1 = SD_Ambience
-		SccLocalPath1 = SD_Ambience
-		SccProjectUniqueName2 = SD.BusinessLayer\\SD.BusinessLayer.csproj
-		SccProjectTopLevelParentUniqueName2 = SD_Ambience.sln
-		SccProjectName2 = SD.BusinessLayer
-		SccLocalPath2 = SD.BusinessLayer
-		SccProjectUniqueName3 = SD.Data\\SD.Data.csproj
-		SccProjectTopLevelParentUniqueName3 = SD_Ambience.sln
-		SccProjectName3 = SD.Data
-		SccLocalPath3 = SD.Data
-		SccProjectUniqueName4 = SD.Commons.Shared\\SD.Commons.Shared.csproj
-		SccProjectTopLevelParentUniqueName4 = SD_Ambience.sln
-		SccProjectName4 = SD.Commons.Shared
-		SccLocalPath4 = SD.Commons.Shared
-		SccProjectUniqueName5 = SD.Repositories\\SD.Repositories.csproj
-		SccProjectTopLevelParentUniqueName5 = SD_Ambience.sln
-		SccProjectName5 = SD.Repositories
-		SccLocalPath5 = SD.Repositories
-		SccProjectUniqueName6 = SD.UnitTest\\SD.UnitTest.csproj
-		SccProjectTopLevelParentUniqueName6 = SD_Ambience.sln
-		SccProjectName6 = SD.UnitTest
-		SccLocalPath6 = SD.UnitTest
-		SccProjectUniqueName7 = SD.Security\\SD.Security.csproj
-		SccProjectTopLevelParentUniqueName7 = SD_Ambience.sln
-		SccProjectName7 = SD.Security
-		SccLocalPath7 = SD.Security
-		SccProjectUniqueName8 = SD.Data.Entities\\SD.Data.Entities.csproj
-		SccProjectTopLevelParentUniqueName8 = SD_Ambience.sln
-		SccProjectName8 = SD.Data.Entities
-		SccLocalPath8 = SD.Data.Entities
-		SccProjectUniqueName9 = ModelingProject1\\ModelingProject1.modelproj
-		SccProjectName9 = ModelingProject1
-		SccLocalPath9 = ModelingProject1
 	EndGlobalSection
 EndGlobal
