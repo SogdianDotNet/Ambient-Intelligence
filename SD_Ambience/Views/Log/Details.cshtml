@@ -1,0 +1,36 @@
+﻿@model SD.Commons.Shared.Models.LogModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Log gegevens</h2>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Date)</th>
+            <th>@Html.DisplayNameFor(model => model.Message)</th>
+            <th>@Html.DisplayNameFor(model => model.Exception)</th>
+            <th>@Html.DisplayNameFor(model => model.Extra)</th>
+            <th>@Html.DisplayNameFor(model => model.UserId)</th>
+            <th>@Html.DisplayNameFor(model => model.Url)</th>
+            <th>@Html.DisplayNameFor(model => model.LogType)</th>
+            <th>@Html.DisplayNameFor(model => model.LogTypeSub)</th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Date)</td>
+            <td>@Html.DisplayFor(model => model.Message)</td>
+            <td>@Html.DisplayFor(model => model.Exception)</td>
+            <td>@Html.DisplayFor(model => model.Extra)</td>
+            <td>@Html.DisplayFor(model => model.UserId)</td>
+            <td>@Html.DisplayFor(model => model.Url)</td>
+            <td>@Html.DisplayFor(model => model.LogType)</td>
+            <td>@Html.DisplayFor(model => model.LogTypeSub)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Terug naar de lijst", "ListView", "Log")
+</p>

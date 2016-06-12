@@ -1,0 +1,51 @@
+﻿@*@model Chart*@
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="upper-row">
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Start een nieuwe sessie</h3>
+            <p>
+                Om een nieuwe sessie te starten, klik op de knop "Start een nieuwe sessie".
+            </p>
+            <div>
+                <p>
+                    <a class="btn btn-default" onclick="Dashboard.StartNewSession();">Start een nieuwe sessie</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h3>Bekijk rapporten</h3>
+            <p>
+                U kunt alle rapporten van de afgelopen sessies inzien. Hierin staan de scores, klassengegevens en de resultaten van de sessies. Klik op de knop "Bekijk rapporten" om deze in te zien.
+            </p>
+            <div>
+                <p>
+                    <a class="btn btn-default" onclick="Dashboard.ViewReports('@HttpContext.Current.User.Identity.Name');">Bekijk rapporten</a>
+                </p>
+            </div>
+        </div>
+        @*@{
+            // TODO: use the data from the model to draw a chart
+
+            var myChart = new Chart(width: 400, height: 200)
+            .AddTitle("Chart Title")
+            .AddSeries(
+                name: "Employee",
+                xValue: new[] { "Peter", "Andrew", "Julie", "Mary", "Dave" },
+                yValues: new[] { "2", "6", "4", "5", "3" })
+            .Write();
+        }*@
+        @*<img src="@Model.Write();" />*@
+    </div>
+    
+    @*<div>
+        <form action="~/Video/Upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" multiple />
+            <input type="submit" class="button-gegevens-user" value="Upload video" />
+        </form>
+    </div>*@
+</div>

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Download";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Download</h2>
+
+
+@if (HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("SystemAdministrator"))
+{
+    <div>
+        <p>Upload.</p>
+        <p class="succes no-display"></p>
+        <p class="error no-display"></p>
+        <form action="~/Download/Upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" multiple />
+            <input id="uploadSubmitButton" type="submit" class="button-gegevens-user" value="Upload" />
+        </form>
+    </div>
+}
+
+<div>
+    <p>
+        Download the setup.
+    </p>
+    <form action="~/Download/Download" method="post" enctype="multipart/form-data">
+        <input type="submit" class="button-gegevens-user" value="Download" />
+    </form>
+</div>

@@ -1,0 +1,25 @@
+﻿@model SD.Commons.Shared.Models.TeacherModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profiel</h2>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Voornaam</th>
+            <th>Achternaam</th>
+            <th>Email</th>
+            <th>Laatste login</th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Firstname)</td>
+            <td>@Html.DisplayFor(model => model.Lastname)</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+            <td>@Html.DisplayFor(model => model.LastLogin)</td>
+        </tr>
+    </table>
+</div>

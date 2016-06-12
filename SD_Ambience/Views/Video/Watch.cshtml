@@ -1,0 +1,21 @@
+﻿@model SD.Commons.Shared.Models.VideoModel
+
+@{
+    ViewBag.Title = "Watch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <video id="videoPlay" width="480" height="400" controls autoplay>
+        <source src="@Url.Action("Watch", "Video", Model.Id )" />
+    </video>
+</div>
+
+@*<script type="text/javascript">
+    flowplayer("a.player", "FlowPlayer/flowplayer-3.2.16.swf", {
+        plugins: {
+            pseudo: { url: "FlowPlayer/flowplayer.pseudostreaming-3.2.12.swf" }
+        },
+        clip: { provider: 'pseudo', autoPlayer: false },
+    });
+</script>*@

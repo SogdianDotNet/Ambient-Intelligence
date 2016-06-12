@@ -1,0 +1,61 @@
+﻿@model SD.Commons.Shared.Models.TeacherModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Assets/js/Pages")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Verwijderen</title>
+</head>
+<body>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Firstname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Lastname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LastLogin)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LastLogin)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        <button class="button-gegevens-user" onclick="User.GetList();">Terug naar de lijst</button>
+    </p>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Delete" class="btn btn-default" />
+    }
+</body>
+</html>

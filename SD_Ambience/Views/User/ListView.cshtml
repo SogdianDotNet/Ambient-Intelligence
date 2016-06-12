@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SD.Commons.Shared.Models.UserViewModel>
+
+@{
+    ViewBag.Title = "ListView";
+}
+@Scripts.Render("~/Assets/js/Pages")
+
+<h2>Gebruikers</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserRole)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole)
+            </td>
+            <td>
+                @if (item.UserRole == "Docent" && item.Email != HttpContext.Current.User.Identity.Name)
+                {
+                    var email = item.Email;
+                    <button class="button-gegevens-user" onclick="Teacher.ViewProfile('@email');">Gegevens</button>
+                    <button class="button-gegevens-user" onclick="Teacher.Delete('@email');">Verwijderen</button>
+                }
+                @if (item.UserRole == "Administrator" && item.Email != HttpContext.Current.User.Identity.Name)
+                {
+                    var emailAdmin = item.Email;
+                    var userId = item.UserId;
+                    <button class="button-gegevens-user" onclick="Administrator.ViewProfile('@emailAdmin');">Gegevens</button>
+                    <button class="button-gegevens-user" onclick="Administrator.Delete('@userId');">Verwijderen</button>
+                }
+            </td>
+        </tr>
+    }
+
+</table>

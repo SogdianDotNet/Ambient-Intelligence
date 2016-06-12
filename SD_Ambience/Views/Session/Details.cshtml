@@ -1,0 +1,66 @@
+﻿@model SD.Commons.Shared.Models.CourseOverviewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SessionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SessionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Klas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Klas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="button-gegevens-user" onclick="Session.GetList('@HttpContext.Current.User.Identity.Name');">Terug naar de lijst</button>
+    @Html.ActionLink("Grafiek", "DrawChart", "Session", Model.Chart, FormMethod.Get);
+</p>

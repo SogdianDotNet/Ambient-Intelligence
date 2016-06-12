@@ -1,0 +1,42 @@
+﻿@model SD.Commons.Shared.Models.CourseModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <h4>Course</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CourseName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Coordinator)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Coordinator)
+            </dd>
+    
+        </dl>
+    </div>
+
+    
+    <p>
+        @Html.ActionLink("Back to courses", "ListView", "Course", new { userEmail = HttpContext.Current.User.Identity.Name }, null)
+    </p>
+</body>
+</html>

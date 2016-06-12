@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dashboard menu</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Assets/js/Pages")
+    @Scripts.Render("~/Assets/js/Validation");
+    @Styles.Render("~/Assets/css")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Menu", "Dashboard")</li>
+                    <li>@Html.ActionLink("Courses", "ListView", "Course", new { userEmail = HttpContext.Current.User.Identity.Name }, null)</li>
+                    <li>@Html.ActionLink("Download", "Index", "Download")</li>
+                    @if (HttpContext.Current.User.IsInRole("SystemAdministrator") && HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        //, new { email = HttpContext.Current.User.Identity.Name }, null
+                        <li>@Html.ActionLink("Logs", "ListView", "Log")</li>
+                        <li>@Html.ActionLink("Users", "ListView", "User")</li>
+                        <li>@Html.ActionLink("Registreer admin", "RegisterAdministrator", "User")</li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    var username = HttpContext.Current.User.Identity.Name; 
+                    <p>&copy; @DateTime.Now.Year - Smart Doods - ICT-Lab. Ingelogd met: <span style="font-size:larger; font-weight:bolder;">@username</span></p>
+                }
+                else
+                {
+                    <p>&copy; @DateTime.Now.Year - Smart Doods - ICT-Lab.</p>
+                }
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

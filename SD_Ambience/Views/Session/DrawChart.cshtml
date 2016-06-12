@@ -1,0 +1,19 @@
+﻿@model SD.Commons.Shared.Models.ChartModel
+
+
+@{
+    ViewBag.Title = "DrawChart";
+    Layout = "~/Views/Session/Details.cshtml";
+}
+
+@{
+
+    var myChart = new Chart(width: 400, height: 200)
+    .AddTitle("Grafiek")
+    .AddSeries(
+        name: "Grafiek",
+        xValue: Model.TimeStamps,
+        yValues: Model.Scores)
+    .Write();
+}
+
