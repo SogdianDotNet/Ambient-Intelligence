@@ -7,26 +7,8 @@ using System.Threading.Tasks;
 
 namespace SD.Security.Utils
 {
-    ////SOURCE OF THIS ENCRYPTION: http://www.obviex.com/samples/hash.aspx
-    ///CODE NIET MEER GEBRUIKT... IN DE STARR UITGELEGD WAAROM
-
-    /// <summary>
-    /// This class generates and compares hashes using MD5, SHA1, SHA256, SHA384, 
-    /// and SHA512 hashing algorithms.
-    /// </summary>
     public static class HashData
     {
-        /// <summary>
-        /// Generates a hash for the given plain text value and returns a
-        /// base64-encoded result. Before the hash is computed, a random salt
-        /// is generated and appended to the plain text. This salt is stored at
-        /// the end of the hash value, so it can be used later for hash
-        /// verification.
-        /// </summary>
-        /// <param name="plainText"></param>
-        /// <param name="hashAlgorithm"></param>
-        /// <param name="saltBytes"></param>
-        /// <returns></returns>
         public static string ComputeHash(string plainText, string hashAlgorithm, byte[] saltBytes)
         {
             // If salt is not specified, generate it on the fly.
@@ -119,16 +101,7 @@ namespace SD.Security.Utils
             // Return the result.
             return hashValue;
         }
-
-        /// <summary>
-        /// Compares a hash of the specified plain text value to a given hash
-        /// value. Plain text is hashed with the same salt value as the original
-        /// hash.
-        /// </summary>
-        /// <param name="plainText"></param>
-        /// <param name="hashAlgorithm"></param>
-        /// <param name="hashValue"></param>
-        /// <returns></returns>
+        
         public static bool VerifyHash(string plainText,
                                   string hashAlgorithm,
                                   string hashValue)
